@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cryptography Project</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Cryptography Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Encrypt a File</h2>
+            <form action="/encrypt" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="encryptionKey">Encryption Key</label>
+                    <input type="text" id="encryptionKey" name="key" placeholder="Enter a key" required>
+                </div>
+                <div class="input-group">
+                    <label for="fileToEncrypt">Choose File</label>
+                    <input type="file" id="fileToEncrypt" name="file" required>
+                </div>
+                <button type="submit" class="btn">Encrypt</button>
+            </form>
+        </section>
+        <section>
+            <h2>Decrypt a File</h2>
+            <form action="/decrypt" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="decryptionKey">Decryption Key</label>
+                    <input type="text" id="decryptionKey" name="key" placeholder="Enter the decryption key" required>
+                </div>
+                <div class="input-group">
+                    <label for="fileToDecrypt">Choose Encrypted File</label>
+                    <input type="file" id="fileToDecrypt" name="file" required>
+                </div>
+                <button type="submit" class="btn">Decrypt</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cryptography Project</p>
+    </footer>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/aes.js"></script>
+</body>
+</html>
